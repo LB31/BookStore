@@ -11,10 +11,10 @@ public class Book {
 	public String author;
 	
 	public Book(Integer id, String title, Integer price, String author) {
-		this.id = id;
-		this.title = title;
-		this.price = price;
-		this.author = author;
+		setId(id);
+		setTitle(title);
+		setPrice(price);
+		setAuthor(author);
 	}
 	
 	public Book() {}
@@ -51,5 +51,43 @@ public class Book {
 	}
 	
 	
-	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public Integer getPrice() {
+		return price;
+	}
+
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public static Set<Book> getBooks() {
+		return books;
+	}
+
+	public static void setBooks(Set<Book> books) {
+		Book.books = books;
+	}
 }

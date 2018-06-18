@@ -30,8 +30,6 @@ public class BooksController extends Controller {
 	public Result saveBook() {
 		Form<Book> bookForm = formFactory.form(Book.class).bindFromRequest();
 		Book book = bookForm.get();
-		System.out.println(bookForm.allErrors() + " errors");
-		book.price = 20;
 		Book.addBook(book);
 		return redirect(routes.BooksController.indexBooks());
 	}

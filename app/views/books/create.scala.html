@@ -9,7 +9,7 @@
 <body>
 
 <h1>Create book</h1>
-	@helper.form(action = routes.BooksController.saveBook()){
+	@helper.form(action = CSRF(routes.BooksController.saveBook())){
 		
 		@helper.inputText(bookForm("id"))
 		@helper.inputText(bookForm("title"))
