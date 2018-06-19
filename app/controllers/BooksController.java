@@ -29,26 +29,48 @@ public class BooksController extends Controller {
 	
 	public Result saveBook() {
 		Form<Book> bookForm = formFactory.form(Book.class).bindFromRequest();
+		// Get returns the object out of the form
 		Book book = bookForm.get();
 		Book.addBook(book);
 		return redirect(routes.BooksController.indexBooks());
 	}
 	
 	public Result editBook(Integer id) {
-		return TODO;
+		Book book = Book.findById(id);
+		if(book == null)
+			return notFound("Book not found");
+		Form<Book> bookForm = formFactory.form(Book.class).fill(book);
+		return ok(edit.render(bookForm));
 	}
 	
 	// Sends the edit to the data base
 	public Result updateBook() {
-		return TODO;
-	}
-	
-	public Result destroyBook(Integer id) {
-		return TODO;
+		Form<Book> bookForm = formFactory.form(Book.class).bindFromRequest();
+		Book book = bookForm.get();
+		Book oldBook = Book.findById(book.id);
+		if(oldBook == null)
+			return notFound("Book not found");
+		oldBook.updateAllValues(book);
+		return redirect(routes.BooksController.indexBooks());
 	}
 	
 	public Result showBook(Integer id) {
-		return TODO;
+		Book book = Book.findById(id);
+		if(book == null)
+			return notFound("Book not found");
+		return ok(show.render(book));
+		
 	}
+	
+	
+	public Result destroyBook(Integer id) {
+		Book book = Book.findById(id);
+		if(book == null)
+			return notFound("Book not found");
+		Book.remove(book);
+		return redirect(routes.BooksController.indexBooks());
+	}
+	
+
 	
 }

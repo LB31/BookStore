@@ -10,16 +10,6 @@ public class Book {
 	public Integer price;
 	public String author;
 	
-	public Book(Integer id, String title, Integer price, String author) {
-		setId(id);
-		setTitle(title);
-		setPrice(price);
-		setAuthor(author);
-	}
-	
-	public Book() {}
-	
-	
 	private static Set<Book> books;
 	
 	static {
@@ -27,6 +17,25 @@ public class Book {
 		books.add(new Book(1, "Java book", 250, "Batman"));
 		books.add(new Book(2, "C# book", 56, "Obama"));
 	}
+	
+	public Book() {}
+	
+	public Book(Integer id, String title, Integer price, String author) {
+		setId(id);
+		setTitle(title);
+		setPrice(price);
+		setAuthor(author);
+	}
+	
+	
+	public void updateAllValues(Book book) {
+		setId(book.id);
+		setTitle(book.title);
+		setPrice(book.price);
+		setAuthor(book.author);
+	}
+	
+	
 	
 	public static Set<Book> allBooks(){
 		return books;
