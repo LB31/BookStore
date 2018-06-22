@@ -4,15 +4,9 @@
 *********************@
 @import helper._
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>Book edit stuff</title>
-</head>
-<body>
-
+@layout("Book edit stuff"){
 <h1>Create book</h1>
-	@helper.form(action = CSRF(routes.BooksController.updateBook())){
+	@helper.form(action = routes.BooksController.updateBook()){
 		
 		@helper.inputText(bookForm("id"))
 		@helper.inputText(bookForm("title"))
@@ -21,7 +15,4 @@
 		
 	    <input type="submit" value="Edit Book">
 	}
-	
-
-</body>
-</html> 
+}

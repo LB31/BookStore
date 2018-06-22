@@ -1,0 +1,13 @@
+@()
+@import helper._
+@layout("Upload test"){
+	@form(action = routes.BooksController.upload, 'enctype -> "multipart/form-data") {
+
+	    <input type="file" name="picture">
+
+    	<p>
+        	<input type="submit">
+   	 </p>
+
+}
+}

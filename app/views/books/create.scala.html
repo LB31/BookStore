@@ -1,15 +1,8 @@
 @(bookForm : Form[Book])
 @import helper._
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>Book create stuff</title>
-</head>
-<body>
-
+@layout("Book create stuff"){
 <h1>Create book</h1>
-	@helper.form(action = CSRF(routes.BooksController.saveBook())){
+	@helper.form(action = routes.BooksController.saveBook()){
 		
 		@helper.inputText(bookForm("id"))
 		@helper.inputText(bookForm("title"))
@@ -18,7 +11,4 @@
 		
 	    <input type="submit" value="Create Book">
 	}
-	
-
-</body>
-</html> 
+}

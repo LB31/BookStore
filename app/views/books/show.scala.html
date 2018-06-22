@@ -1,12 +1,5 @@
 @(book : Book)
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>B@book.title stuff</title>
-</head>
-<body>
-
+@layout(book.title + " stuff"){
 <h1>@book.title</h1>
 <p>Price : @book.price</p>
 <p>Author : @book.author</p>
@@ -14,6 +7,4 @@
 <a href="@routes.BooksController.editBook(book.id)">Edit</a>
 <br />
 <a href="@routes.BooksController.destroyBook(book.id)">Delete</a>
-
-</body>
-</html> 
+}

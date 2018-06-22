@@ -15,6 +15,16 @@ GET		/books							controllers.BooksController.indexBooks
 GET		/books/create					controllers.BooksController.createBook
 GET		/books/:id						controllers.BooksController.showBook(id : Integer)
 GET		/books/edit/:id					controllers.BooksController.editBook(id : Integer)
++ nocsrf
 POST	/books/edit					    controllers.BooksController.updateBook
++ nocsrf
 POST	/books/create					controllers.BooksController.saveBook
 GET		/books/delete/:id				controllers.BooksController.destroyBook(id : Integer)
+
+
+GET		/upload							controllers.BooksController.manageUpload
++ nocsrf
+POST	/upload							controllers.BooksController.upload
+
+
+GET     /:page                			controllers.BooksController.showTest(page)
