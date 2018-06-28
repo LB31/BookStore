@@ -1,0 +1,14 @@
+@()
+@import helper._
+@books.layout("Calculator"){
+	@helper.form(action = routes.ClientController.sendSerializableObject()){
+		Operand 1: <input type="text" name="operand1" value=""><br>
+		Operand 2: <input type="text" name="operand2" value=""><br>
+		Operation: <br>
+		<input type="radio" name="operation" value="+" checked> Plus<br>
+  		<input type="radio" name="operation" value="-"> Minus<br>
+  		<input type="radio" name="operation" value="*"> Times<br> 
+  		<input type="radio" name="operation" value=":"> Divide<br>
+  		<input type="submit" value="Calculate">
+	}
+}

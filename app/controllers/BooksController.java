@@ -98,4 +98,9 @@ public class BooksController extends Controller {
 	        return badRequest();
 	    }
 	}
+	
+	public Result showImage() {
+		
+		return ok(image.render());
+	}
 }

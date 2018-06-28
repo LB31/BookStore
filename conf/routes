@@ -26,5 +26,12 @@ GET		/upload							controllers.BooksController.manageUpload
 + nocsrf
 POST	/upload							controllers.BooksController.upload
 
+GET     /image                			controllers.BooksController.showImage
+
+GET		/calculate						controllers.ClientController.calculate
++ nocsrf
+POST	/calculate						controllers.ClientController.sendSerializableObject
+
+GET		/serialize						controllers.ClientController.sendSerializableObject
 
 GET     /:page                			controllers.BooksController.showTest(page)
